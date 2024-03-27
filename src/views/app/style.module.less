@@ -4,8 +4,37 @@
     height: calc(100% - 48px);
     .sider {
       :global {
+        .sider-white-menu .ant-menu .ant-menu-item {
+          color: #212529;
+        }
+        .ant-menu.ant-menu-sub.ant-menu-inline {
+          background: #f5f6fa;
+        }
         .ant-menu-light {
-          // background-color: #f5f6fa;
+          padding-top: 16px;
+          padding-left: 24px;
+          background-color: #f5f6fa;
+        }
+        .ant-menu-item-selected {
+          background-color: #fff;
+        }
+        .ant-menu .ant-menu-item {
+          font-size: 14px;
+          height: 32px;
+          letter-spacing: 0;
+          line-height: 32px;
+          font-weight: 400;
+          padding: 0 10px;
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
+        .ant-menu-item.ant-menu-item-selected {
+          color: #ff7d41;
+        }
+        .ant-menu-submenu-selected {
+          .ant-menu-submenu-title {
+            color: #ff7d41;
+          }
         }
       }
     }
@@ -15,7 +44,7 @@
         height: 100%;
         overflow: auto;
         padding: 0 24px;
-        background-color: #fff;
+        background-color: #f5f6fa;
       }
     }
   }

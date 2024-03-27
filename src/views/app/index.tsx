@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
+import Router from '@/route';
 import Header from '../components/Header';
 import style from './style.module.less';
 
@@ -26,6 +27,12 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
 });
 
 function App() {
+	const [routerList, setRouterList] = useState<CommonObjectType[]>([]);
+
+	useEffect(() => {
+		setRouterList([]);
+	}, []);
+
 	return (
 		<div className={style.app}>
 			<Header />
@@ -40,7 +47,9 @@ function App() {
 					/>
 				</Sider>
 				<Layout className={style.contentWrapper}>
-					<div className={style.content}>123</div>
+					<div className={style.content}>
+						<Router routerConfig={routerList} />
+					</div>
 				</Layout>
 			</Layout>
 		</div>
